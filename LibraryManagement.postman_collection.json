@@ -1,0 +1,391 @@
+{
+	"info": {
+		"_postman_id": "a9cc69de-92f2-4c19-ad5a-8df749d08985",
+		"name": "LibraryManagement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "RetrieveAllBooks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8099/api/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8099",
+							"path": [
+								"api",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "retrieveBookById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8099/api/books/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8099",
+							"path": [
+								"api",
+								"books",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteBook",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8099/api/books/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8099",
+							"path": [
+								"api",
+								"books",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddBook",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"title\":\"title\",\r\n    \"author\":\"author\",\r\n    \"publicationYear\":2000,\r\n    \"isbn\":\"isbn\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8099/api/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8099",
+							"path": [
+								"api",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateBook",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"title\":\"title\",\r\n    \"author\":\"auther1\",\r\n    \"publicationYear\":2000,\r\n    \"isbn\":\"isbn\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8099/api/books/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8099",
+							"path": [
+								"api",
+								"books",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RetrieveAllBooksPageable",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"page\":1,\r\n    \"size\" :10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8099/api/books/retrieve/pageable",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8099",
+							"path": [
+								"api",
+								"books",
+								"retrieve",
+								"pageable"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Borrowing",
+			"item": [
+				{
+					"name": "BorrowBook",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"title\":\"title\",\r\n    \"author\":\"author\",\r\n    \"publicationYear\":2000,\r\n    \"isbn\":\"isbn\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8099/api/borrowing/borrow/1/patron/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8099",
+							"path": [
+								"api",
+								"borrowing",
+								"borrow",
+								"1",
+								"patron",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ReturnBook",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"title\":\"title\",\r\n    \"author\":\"auther1\",\r\n    \"publicationYear\":2000,\r\n    \"isbn\":\"isbn\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8099/api/books/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8099",
+							"path": [
+								"api",
+								"books",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Patron",
+			"item": [
+				{
+					"name": "RetrieveAllPatrons",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8099/api/patrons",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8099",
+							"path": [
+								"api",
+								"patrons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RetrievePatronById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8099/api/patrons/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8099",
+							"path": [
+								"api",
+								"patrons",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeletePatron",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8099/api/patrons/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8099",
+							"path": [
+								"api",
+								"patrons",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddPatron",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"name\":\"name\",\r\n    \"contactInfo\":\"contactInfo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8099/api/patrons",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8099",
+							"path": [
+								"api",
+								"patrons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdatePatron",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"name\":\"name\",\r\n    \"contactInfo\":\"contactInfo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8099/api/patrons/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8099",
+							"path": [
+								"api",
+								"patrons",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RetrieveAllPatronsPageable",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"page\":1,\r\n    \"size\" :10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8099/api/patrons/retrieve/pageable",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8099",
+							"path": [
+								"api",
+								"patrons",
+								"retrieve",
+								"pageable"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
